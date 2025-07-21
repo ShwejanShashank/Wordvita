@@ -1,0 +1,181 @@
+@import "./global.scss";
+
+// @font-face {
+//   font-family: 'dimitri'; /a name to be used later/
+//   src: url('../fonts/DIMITRI_.TTF'); /URL to font/
+// }
+
+.nav {
+  width: 100%;
+  height: 120px;
+  // background-color: #80808000;
+  // background-image: url("../images/gradients/Radar.jpg");
+  // background-image: linear-gradient(to right, rgb(84, 159, 238),rgb(106, 85, 226), rgb(120, 68, 172));
+  // background-image: linear-gradient();
+  // margin-top: 5px;
+  // margin-bottom: -5px;
+  // margin-left: 1375px;
+  background-size: cover;
+  font-family: "soul";
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+  padding: 20px;
+  box-sizing: border-box;
+  h3 {
+    color: #000000;
+    font-weight: bold;
+    align-items: center;
+    position: absolute;
+    left: 5%;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    gap: 30px;
+
+    svg {
+      cursor: pointer;
+      height: 28px;
+      width: 28px;
+      // background-color: black;
+    }
+    .stats {
+      cursor: pointer;
+      height: 24px;
+      width: 24px;
+    }
+
+    p {
+      font-size: x-large;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+    }
+
+    .toggle {
+      // position: absolute;
+      // right: 5%;
+
+      --size: 1.3rem;
+
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+
+      width: var(--size);
+      height: var(--size);
+      box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+      border-radius: 999px;
+      color: hsl(0, 0%, 13%);
+
+      transition: all 500ms;
+
+      &:checked {
+        --ray-size: calc(var(--size) * -0.4);
+        --offset-orthogonal: calc(var(--size) * 0.65);
+        --offset-diagonal: calc(var(--size) * 0.45);
+
+        transform: scale(0.75);
+        color: hsl(40, 100%, 50%);
+        box-shadow: inset 0 0 0 var(--size),
+          calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+          var(--offset-orthogonal) 0 0 var(--ray-size),
+          0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+          0 var(--offset-orthogonal) 0 var(--ray-size),
+          calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+            var(--ray-size),
+          var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+          calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0
+            var(--ray-size),
+          var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0
+            var(--ray-size);
+      }
+    }
+  }
+
+  // layout
+  // body {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  //   min-height: 100vh;
+  // }
+
+  // .background {
+  //   --bg: hsl(240, 100%, 10%);
+  //   background: var(--bg);
+  //   position: fixed;
+  //   height: 100vh;
+  //   width: 100vw;
+  //   transition: background 500ms;
+  // }
+
+  // .toggle {
+  //   z-index: 1;
+  //   &:checked {
+  //     & ~ .background {
+  //       --bg: white;
+  //     }
+  //     & ~ .title {
+  //       --color: hsl(40, 100%, 50%);
+  //     }
+  //   }
+  // }
+
+  // .title {
+  //   --color: hsl(240, 100%, 95%);
+  //   color: var(--color);
+  //   z-index: 1;
+  //   cursor: pointer;
+  //   display: block;
+  //   padding: 0.5rem 0 0;
+  //   transition: color 500ms;
+  // }
+  &.dark {
+    background-color: #f9333300;
+    h3 {
+      color: white;
+    }
+    .right {
+      p {
+        color: white;
+      }
+      svg {
+        fill: white;
+      }
+    }
+  }
+  transition: all 300ms;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    h3 {
+      font-size: x-large;
+    }
+    .right {
+      gap: 12px;
+      .toggle {
+        height: 20px;
+        width: 20px;
+      }
+      svg {
+        height: 26px;
+        width: 26px;
+      }
+      p {
+        font-size: large;
+      }
+
+      .stats {
+        height: 21px;
+        width: 21px;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// white mode
+$header-bg: purple;
+$body-bg-l: #ffffff;
+$primary-text-color-l: black;
+$secondary-text-color-l: grey;
+
+$nice-blue: rgb(84, 159, 238);
+//dark mode
+$header-bg-d: rgb(87, 6, 87);
+$body-bg-d: black;
+$primary-text-color-d: #ffffff;
+$secondary-text-color-d: rgb(62, 62, 62);
+
+@font-face {
+  font-family: "soul"; /*a name to be used later*/
+  src: url("../fonts/Sell\ Your\ Soul.ttf"); /*URL to font*/
+}
+
+// @font-face {
+//   font-family: "diandra"; /*a name to be used later*/
+//   src: url("../fonts/Diandra-demo.ttf"); /*URL to font*/
+// }
