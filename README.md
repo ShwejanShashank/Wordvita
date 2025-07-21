@@ -8,7 +8,7 @@ Developed by [Shwejan Shashank](https://github.com/ShwejanShashank), this game b
 
 ## 🧠 Gameplay Overview
 
-- Players are presented with a set of **5 AI-generated clues**.
+- Players are presented with a set of **5  clues**.
 - These clues are derived using **word vector similarity** techniques (e.g., cosine similarity).
 - Based on the hints, the player must **guess the correct target word**.
 - Each clue is contextually meaningful — can be a synonym, category, usage, or semantic neighbor.
